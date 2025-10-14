@@ -1,0 +1,9 @@
+<xacro name="camera">
+
+    <link name="">
+    </link>
+
+    <joint name="">
+    </joint>
+
+</xacro>

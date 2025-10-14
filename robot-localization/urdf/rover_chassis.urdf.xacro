@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="https://www.ros.org/wiki/xacro" name="rover">
+<xacro:macro name="chassis" params="name">
+
+    <link name="${name}" >
+        <visual>
+            <geometry>
+                <box size="2.0 1.0 0.5"/>
+            </geometry>
+            <material name="Black">
+                <color rgba="0.0 0.0 1.0 1"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="2.0 1.0 0.5"/>
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="1.14395"/>
+            <inertia ixx="0.095329" ixy="0" ixz="0" iyz="0" iyy="0.381317" izz="0.476646"/>
+        </inertial>
+
+    </link>
+
+
+
+</xacro:macro>
+</robot>

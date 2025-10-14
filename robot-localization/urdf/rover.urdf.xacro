@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="https://www.ros.org/wiki/xacro" name="rover">
+
+
+<!-- generate links -->
+<xacro:include filename="rover_chassis.urdf.xacro" />
+<xacro:chassis name="chassis" />
+
+
+
+<!-- generate joints -->
+
+<!-- Front left -->
+<xacro:include filename="wheel_front_left.urdf.xacro" />
+<xacro:front_left name="front_left" parent="chassis" />
+
+<!-- Front right -->
+<xacro:include filename="wheel_front_right.urdf.xacro" />
+<xacro:front_right name="front_right" parent="chassis" />
+
+<!-- Rear left -->
+<xacro:include filename="wheel_rear_left.urdf.xacro" />
+<xacro:rear_left name="rear_left" parent="chassis" />
+
+<!-- Rear right -->
+<xacro:include filename="wheel_rear_right.urdf.xacro" />
+<xacro:rear_right name="rear_right" parent="chassis" />
+
+<!-- generate plugin for camera -->
+
+<!-- generate plugin for lidar -->
+
+<!-- generate plugin for imu -->
+
+
+</robot>

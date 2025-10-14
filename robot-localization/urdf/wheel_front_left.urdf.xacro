@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="https://www.ros.org/wiki/xacro" name="rover">
+<xacro:macro name="front_left" params="name parent">
+    <link name="${name}_wheel" >
+        <visual>
+            <geometry>
+                <cylinder radius="0.4" length="0.2" />
+            </geometry>
+            <material name="green">
+                <color rgba="0.0 1.0 0.0 1" />
+            </material>
+        </visual>
+
+        <collision>
+            <geometry>
+                <cylinder radius="0.4" length="0.2" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <mass value="1" />
+            <inertia ixx="0.043333" iyy="0.043333" izz="0.08" ixy="0" ixz="0" iyz="0" />
+        </inertial>
+
+    </link>
+    
+    <joint name="${name}_joint" type="continuous">
+        <parent link="${parent}"/>
+        <child link="${name}_wheel"/>
+        <origin xyz="0.25 0.2 0" />
+        <axis xyz="0 1 0"/>
+
+    </joint>
+
+</xacro:macro>
+</robot>

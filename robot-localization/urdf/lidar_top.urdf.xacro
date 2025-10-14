@@ -1,0 +1,9 @@
+<xacro:macro name="lidar">
+
+    <link name="">
+    </link>
+
+    <joint name="">
+    </joint>
+
+</xacro>

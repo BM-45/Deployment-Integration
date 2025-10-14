@@ -1,0 +1,10 @@
+<xacro name="imu">
+
+    <link name="" >
+    </link>
+
+    <joint name="">
+    </joint>
+    
+
+</xacro>
