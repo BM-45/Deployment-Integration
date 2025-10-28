@@ -9,6 +9,8 @@ def generate_launch_description():
     pkg_share = FindPackageShare('robot-localization')
     xacro_path = PathJoinSubstitution([pkg_share, 'urdf', 'rover.urdf.xacro'])
 
+    rviz_config_path = PathJoinSubstitution([pkg_share, 'rviz', 'display.rviz'])
+
     robot_state_pub = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
@@ -28,7 +30,8 @@ def generate_launch_description():
         package = 'rviz2',
         executable = 'rviz2',
         name = 'rviz2',
-        output = 'screen'
+        output = 'screen',
+        arguments = ['-d', rviz_config_path]
     )
 
 
@@ -38,6 +41,11 @@ def generate_launch_description():
             default_value = xacro_path,
             description = 'path to the xacro file'
         ), 
+        DeclareLaunchArgument(
+            'rviz_config_path',
+            default_value = rviz_config_path,
+            description = 'path to the rviz config file' 
+        ),
         DeclareLaunchArgument(
             'use_gui',
             default_value = 'True',

@@ -1,0 +1,41 @@
+<sdf version="1.11">
+    <world name="separate_plugins">
+
+        <plugin filename="gz-sim-physics-system" name="gz::sim::v8::systems::Physics">
+        </plugin>
+
+        <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::v8::systems::SceneBroadcaster">
+        </plugin>
+
+        <model name="ground_plane" >
+            <static>true</static>
+            <link name="link">
+                <collision name="collision">
+                    <geometry>
+                        <plane>
+                            <normal>0 0 1</normal>
+                            <size>100 100 </size>
+                        </plane>
+                    </geometry>
+                    <surface><contact><collide_bitmask>0x01</collide_bitmask></contact></surface>
+                </collision>
+                <visual name="visual">
+                    <geometry>
+                        <plane>
+                            <normal> 0 0 1</normal>
+                            <size>100 100</size>
+                        </plane>
+                    </geometry>
+                    <material><ambient>1 1 1 1</ambient> </material>
+                </visual>
+            </link>
+
+        </model>
+
+        <include>
+            <uri>robot-localization/sdf/rover.sdf</uri>
+            <pose> 0 0 0.3 0 0 0</pose>
+        </include> 
+
+    </world>
+</sdf>
